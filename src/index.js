@@ -23,7 +23,15 @@ const createIncrementer = () => {};
 const returnBackInSecond = (param) => {
     return new Promise((resolve) => {setTimeout(()=>{resolve(param);},1001);});
 };
-const getDeepPropertiesCount = () => {};
+const getDeepPropertiesCount = (obj) => {
+    let count = 0;
+    props = Object.getOwnPropertyNames(obj);
+    count += props.length;
+    for(let elem of props){
+        if (Object.getOwnPropertyNames(obj[elem]).length) count += getDeepPropertiesCount(obj[elem]);
+    }
+    return count;
+};
 const createSerializedObject = () => {};
 const toBuffer = () => {};
 const sortByProto = (arr) => {
