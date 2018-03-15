@@ -32,7 +32,7 @@ const getDeepPropertiesCount = (obj) => {
     }
     return count;
 };
-const createSerializedObject = () => {};
+const createSerializedObject = () => {return null;};
 const toBuffer = () => {};
 const sortByProto = (arr) => {
     return arr.sort((obj1,obj2)=>{
