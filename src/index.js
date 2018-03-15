@@ -15,7 +15,12 @@ const createNotEnumerableProperty = (propertyName) => {
     return propertyName;
 };
 const createProtoMagicObject = () => {return Function;};
-const incrementor = () => {};
+let incrValue=0;
+const incrementor = () => {
+    incrValue++;
+    Function.prototype.valueOf=function(){return incrValue;};
+    return incrementor;
+};
 const asyncIncrementor = () => {};
 const createIncrementer = () => {};
 
